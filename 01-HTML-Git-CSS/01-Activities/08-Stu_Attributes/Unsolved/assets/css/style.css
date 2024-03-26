@@ -16,4 +16,11 @@
 
 #portfolio {
   background-color: darkorange;
+  
+}
+img {
+  width: 200px; 
+  height: 200px;
+  border-top-left-radius: 10%;
+  border-bottom-right-radius: 10%;
 }
