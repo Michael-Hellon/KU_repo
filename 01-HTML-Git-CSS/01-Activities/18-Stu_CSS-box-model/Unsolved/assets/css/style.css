@@ -1,8 +1,9 @@
 section {
   width: 600px;
   height: 600px;
-  text-align: center;
-  margin: 30px, 300px;
+  background-size: cover;
+  position: relative;
+  margin: 10px auto;
   border: 15px solid black;
 
 }
