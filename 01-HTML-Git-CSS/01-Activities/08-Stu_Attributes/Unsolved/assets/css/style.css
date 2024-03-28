@@ -24,3 +24,7 @@ img {
   border-top-left-radius: 10%;
   border-bottom-right-radius: 10%;
 }
+
+p {
+  width: 600px;
+}
