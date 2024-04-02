@@ -4,10 +4,10 @@
 
 body {
   font-family: Arial;
-  margin: 0;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  min-height: 50%;
   justify-content: flex-start;
 }
 
@@ -21,10 +21,12 @@ header {
 nav {
   display: flex;
   background-color: #d8a47f;
+  justify-content: right;
 }
 
 nav a {
   color: #13293d;
+  margin-right: 15px;
   padding: 14px 20px;
   text-decoration: none;
   text-align: center;
@@ -36,29 +38,36 @@ footer {
   background: #13293d;
   color: #fff;
   margin-top: auto;
+  width: 100%
 }
 
 .product {
   display: flex;
-  width: 90%;
+  width: 95%;
   margin: 1% auto;
 }
 
 .product button {
-  font-size: 150%;
+  font-size: 75%;
+  height: 10%;
+  justify-content: center;
+  margin-top: 25%;
+  padding: auto;
 }
 
 .product-slideshow {
   display: flex;
+  
 }
 
 .product-image {
-  width: 100%;
+   width: 100%;
 }
 
 .product-details {
   margin-left: 3%;
-  flex: 0 0 60%;
+  margin-right: auto;
+  flex: 0 90% 80%;
 }
 
 @media screen and (max-width: 768px) {
@@ -70,10 +79,15 @@ footer {
 
   .product-slideshow button {
     /* Removes the slideshow buttons from the document flow */
-    display: none;
+    
+    display: block;
+    justify-content: center;
+    align-items: center;
   }
 
   .product-details {
-    margin-left: 0;
+    margin-left: 25px;
+    margin-right: 25px;
+    width: 90%;
   }
 }
