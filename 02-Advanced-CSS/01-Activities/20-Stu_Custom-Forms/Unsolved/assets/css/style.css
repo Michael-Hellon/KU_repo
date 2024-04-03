@@ -89,7 +89,7 @@ button {
 select {
   /* -moz-appearance: none;
   -webkit-appearance: none; */
-  appearance: none;
+  appearance: auto;
   background-image: url("../images/arrow.png");
   background-repeat: no-repeat;
   background-position: right;
@@ -112,12 +112,12 @@ select:hover, button:hover {
   box-shadow: 0 0 5px #999;
 }
 
-/* What does this pseudo-class mean? */
+/* What does this pseudo-class mean?  this changes the thickness of the right border when clicked on */
 .text-input:focus {
   border-right-width: 5px;
 }
 
-/* What does this pseudo-class mean? */
+/* What does this pseudo-class mean? - It shows text in the input box to help the user*/
 .text-input:placeholder-shown {
   border-style: dashed;
 }
@@ -136,7 +136,8 @@ select:hover, button:hover {
   margin-right: 2%;
 }
 
-/* What does this selector do? */
+/* What does this selector do? It changes the color of the test when you click the box beside it
+the + checks that the box is checked*/
 .checkbox:checked + label {
   color: #999999;
   font-style: italic;

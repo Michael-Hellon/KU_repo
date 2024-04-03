@@ -33,7 +33,14 @@ header {
 .card img {
   width: 100%;
 }
+@media screen and (max-width: 992px) {
+  .card {
+    width: 50%;
+  }
+}
 
-/* TODO: Use media query to change the width of the cards so they split into two columns at 992px or smaller*/
-
-/* TODO: Use media query to change the width of the cards so they are stacked on top of each other at 768px or smaller */
+@media screen and (max-width: 768px) {
+  .card {
+    width: 100%;
+  }
+}

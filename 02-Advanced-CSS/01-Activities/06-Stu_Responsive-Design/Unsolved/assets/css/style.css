@@ -15,9 +15,9 @@ header {
 }
 
 /* 
-What happens when we set the display property to flex? 
-TODO: Write your answer here 
+Turning on the ability to use flexbox related properties for the nav element.
 */
+
 nav {
   display: flex;
   background-color: #d8a47f;
@@ -32,8 +32,9 @@ nav a {
 
 /* 
 What is the flex-wrap property? 
-TODO: Write your answer here 
+Forces the element if the screen is too small to fit the element to wrap to the next line.
 */
+
 main {
   display: flex;
   flex-wrap: wrap;
@@ -56,7 +57,7 @@ footer {
 
 /* 
 What does the justify-content property do? 
-TODO: Write your answer here 
+Aligns the products so the appear at the center of the parent element.
 */
 .products {
   flex: 4;
@@ -70,7 +71,7 @@ TODO: Write your answer here
 /* 
 What is the flex property a shorthand property for?
 What is it doing here? 
-TODO: Write your answer here 
+The flex property of 0 min and 0 max will force the card to always be 400px.
 */
 .card {
   border-style: solid;
@@ -95,7 +96,7 @@ TODO: Write your answer here
 /* 
 What does the flex-direction property define?
 What is it doing here? 
-TODO: Write your answer here 
+If the screen is too small (like a smartphone) then it set the directionality of the main and nav to a column, or up and down.
 */
 @media screen and (max-width: 768px) {
   main,
