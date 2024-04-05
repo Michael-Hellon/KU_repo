@@ -69,9 +69,13 @@ footer {
 }
 
 /* TODO: Add code here to select all <a> elements that link to a file with a `.css` extension */
+/* (https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors)
 
+*/
 a[href*='.css']::after {
   content: '📝';
+  display: inline-block; /* allows the two to be on the same line */
+  margin-left:3px; /* adds space between the link and the icon */
 }
 
 @media screen and (max-width: 768px) {
