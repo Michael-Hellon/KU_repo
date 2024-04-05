@@ -1,7 +1,7 @@
 :root {
-  --dark: #13293d;
-  --light: #fff;
-  --radius: 50px;
+  --dark-blue: #13293d;
+  --white: #fff;
+  --card-radius: 50px;
 }
 /* :root and var(-- ) can be used to declare any element in CSS */
 
@@ -27,8 +27,8 @@ h2 {
 header {
   padding: 40px;
   text-align: center;
-  background: var(--dark);
-  color: var(--light); 
+  background: var(--dark-blue);
+  color: var(--white); 
 }
 
 nav {
@@ -44,7 +44,7 @@ nav a {
 }
 
 nav a:hover {
-  background-color: var(--light);
+  background-color: var(--white);
 }
 
 main {
@@ -57,14 +57,14 @@ footer {
   bottom: 0;
   padding: 20px;
   text-align: center;
-  background:var(--dark);
-  color:var(--light);;
+  background:var(--dark-blue);
+  color:var(--white);;
   margin-top: auto;
 }
 
 .products {
   flex: 1;
-  background-color:var(--light);;
+  background-color:var(--white);;
   padding: 50px;
   display: flex;
   flex-wrap: wrap;
@@ -74,7 +74,7 @@ footer {
 .card {
   border-style: solid;
   border-width: 1px;
-  border-radius: var(--radius);
+  border-radius: var(--card-radius);
   padding: 10px;
   flex: 0 0 300px;
   transform: rotate(8deg);
@@ -83,7 +83,7 @@ footer {
 }
 
 .card > header {
-  border-radius: var(--radius) 0px;
+  border-radius: var(--card-radius) var(--card-radius) 0px 0px;
   padding: 20px;
 }
 
