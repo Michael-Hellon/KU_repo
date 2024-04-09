@@ -7,19 +7,20 @@ let six = "Howdy!";
 let seven;
 
 // Insert comments to explain what each console log below will log to the console
-console.log(typeof one); 
-console.log(typeof two); 
-console.log(typeof three); 
-console.log(typeof four); 
-console.log(typeof five);
-console.log(typeof six);
-console.log(typeof seven);
+console.log(typeof one);  // Number, cannot be changed, immutable
+console.log(typeof two); // String, cannot be changed, immutable
+console.log(typeof three); // Boolean, cannot be changed, immutable
+console.log(typeof four); // object, cannot be changed, immutable
+console.log(typeof five); // Number - floating point, can be changed
+console.log(typeof six); // String, can be changed
+console.log(typeof seven); // undefined, can be changed
 
 five = "Hello!";
 six = false;
 seven = 23;
 
 // Insert comments to explain what each console log below will log to the console
-console.log(typeof five);
-console.log(typeof six);
-console.log(typeof seven);
+console.log(typeof five); // String
+console.log(typeof six); // Boolean
+console.log(typeof seven); // Number
+
