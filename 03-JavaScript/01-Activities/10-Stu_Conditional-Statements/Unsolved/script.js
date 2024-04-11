@@ -4,7 +4,12 @@ const expression1 = (x < 25);
 const expression2 = (x > 50);
 
 // Write Your JavaScript Code Here
-console.log(!expression1 && !expression2);
-console.log(!expression1 || expression2);
-console.log(expression1 || !expression2);
-console.log(expression1 && expression2)
+if(expression1  && expression2){
+    console.log("True ✅ True ✅");
+} else if(expression1){
+    console.log("True ✅ False ❌");
+} else if(expression2){
+    console.log("False ❌ True ✅");
+} else {
+    console.log("False ❌ False ❌");
+}
