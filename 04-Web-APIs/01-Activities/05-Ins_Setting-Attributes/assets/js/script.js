@@ -1,10 +1,10 @@
-// Access multiple elements using .querySelectorAll()
-const divTags = document.querySelectorAll('div');
+// Access multiple elements using .querySelectorAll() //  this will give us all the elements. this is link using Alt-F in a PDF
+const divTags = document.querySelectorAll('div'); 
 const pTags = document.querySelectorAll('p');
 const imgEl = document.querySelectorAll('img');
 
 // Access element by ID using .querySelector()
-const changeP = document.querySelector('#change2');
+const changeP = document.querySelector('#change2'); // returns first element that matches '#change2')
 
 // Sets first pTags to have a font-size of 40px
 pTags[0].setAttribute('style', 'font-size: 40px;');

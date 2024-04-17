@@ -4,7 +4,7 @@ const timeEl = document.querySelector('.time');
 // Selects element by id
 const mainEl = document.getElementById('main');
 
-const secondsLeft = 10;
+let secondsLeft = 10;
 
 function setTime() {
   // Sets interval in variable
@@ -14,7 +14,7 @@ function setTime() {
 
     if (secondsLeft === 0) {
       // Stops execution of action at set interval
-      clearInterval(timerInterval);
+      clearInterval(timerInterval); // without this it will keep counting into the negative seconds
       // Calls function to create and append image
       sendMessage();
     }

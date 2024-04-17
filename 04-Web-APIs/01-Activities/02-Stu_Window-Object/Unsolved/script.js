@@ -1,23 +1,23 @@
 // TODO: What will the following line of code log?
-console.log(window);
+console.log(window);// logs window object to the console
 //  Window {window: Window, self: Window, document: document, name: '', location: Location, …}
     //  it will display information about the entire browser window, including its properties and methods3.
 
 // TODO: What will the following line of code log?
-console.log('5',window.document);
+console.log(window.document); // logs the HTML document object that contains
 // (https://127.0....) web link to the document
     // Returns a reference to the Document object associated with the window. This object represents the DOM (Document Object Model) loaded in that window.
 
 
 // TODO: What will the following line of code log?
-console.log('A', document.documentElement);
+console.log(document.documentElement); // 
 //   logs the entire html document
     // This refers to the root element of the HTML document, which is the <html> tag. It represents the entire HTML structure and contains other elements 
     // like <head> and <body>. By logging document.documentElement, you’ll see information about the entire HTML document, including its attributes and child elements. */
 
 // TODO: What will the following line of code log?
-console.log('2',document.head); 
-//  logs- 2 and the <head> element of the html code
+console.log(document.head); 
+//  logs- the <head> element of the html code
     // The document.head property is part of the Document Object Model (DOM) and provides programmatic access to the <head> element.
     // It returns the actual <head> element of the current document.
 

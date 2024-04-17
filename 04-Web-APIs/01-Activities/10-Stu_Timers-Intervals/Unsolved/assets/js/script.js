@@ -6,15 +6,29 @@ const message =
 const words = message.split(' ');
 
 function countdown() {
-  const timeLeft = 5;
+  let timeLeft = 5;
 
   // TODO: Use the `setInterval()` method to call a function to be executed every 1000 milliseconds
   const timeInterval = setInterval(function () {
-    //
-    // YOUR CODE HERE
-    //
-  });
+  
+       
+    if (timeLeft === 0) {
+      timerEl.textContent = timeLeft + ' seconds remaining';
+      timeLeft--;
+    } else {
+      timerEl.textContent = ' ';
+      // clearInterval(timeInterval);
+      // displayMessage
+    // }
+     
+      // Stops execution of action at set interval
+      clearInterval(timeInterval); // without this it will keep counting into the negative seconds
+      // Calls function to create and append image
+      displayMessage();
+    }
+  },1000)
 }
+
 
 // Displays the message one word at a time
 function displayMessage() {
