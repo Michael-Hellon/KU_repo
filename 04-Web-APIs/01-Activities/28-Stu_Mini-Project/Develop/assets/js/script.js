@@ -16,16 +16,19 @@ let tempStorageObject = {
 let currentElement = null;
 
 clearBtn.addEventListener('click', function () {
-  // TODO: Clear the local storage and refresh the page
+  localStorage.clear(); // clears all of LS
+  window.location.reload(); 
 });
 
 function updateLocalStorage() {
   // TODO: Update the local storage with the tempStorageObject
+  localStorage.setItem('moodBoardData', JSON.stringify(tempStorageObject));
 }
 
 // ? Function to load from local storage. This function will be called on page load.
 function loadFromLocalStorage() {
   // TODO: Load and parse the data from local storage and paint the images and text on the mood board
+  const storedData = JSON.parse(localStorage.get.item('moodBoardData'));
 
   if (storedData) {
     tempStorageObject = storedData;
@@ -41,6 +44,14 @@ function loadFromLocalStorage() {
     });
 
     // TODO: Paint the stored text to the mood board
+    tempStorageObject.text.forEach((txt) => {
+      const textDiv = document.createElement('img');
+      textDiv.src = txt.url;
+      textDiv.style.left = txt.left;
+      textDiv.style.top = txt.top;
+      textDiv.classList.add('text-itme');
+      moodBoardEl.appendChild(textDiv);
+    });
   }
 }
 
@@ -49,8 +60,12 @@ addImageBtn.addEventListener('click', function () {
   const imageUrl = imageUrlInput.value;
   if (imageUrl) {
     // TODO: Create an image element, add a class of draggable, set the src attribute to the image URL provided by the user, and append it to the body element
-
+    const img = document.createElement('img');
+    img.src = image.url;
+    img.classList.add('draggable');
+    document.body.appendChild(img);
     // TODO: Set the `currentElement` to the image element you create.
+    currentElement = img;
 
     // ? We attach the mouse move event listener to the document and the mood board div so that the element can be dragged anywhere on the screen and dropped only on the mood board div.
     attachMouseListeners();

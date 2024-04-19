@@ -12,6 +12,9 @@ function calculateTotal(total, tipAmount) {
 }
 
 function addTip(event) {
+  // it doesn't matter where you put the default statement
+  // by convention it goes at the top of the function
+  event.preventDefault();
   const tipPercentage = tipEl.value * 0.01;
   const total = totalEl.value;
   const tipAmount = calculateTip(total, tipPercentage);

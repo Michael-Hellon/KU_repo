@@ -8,6 +8,13 @@ function setCounterText() {
 }
 
 // TODO: Add event listener to increment button
-incrementEl.addEventListener("click", function(){ count++; setCounterText});
+incrementEl.addEventListener("click", function()
+{ count++; setCounterText() });
 // TODO: Add event listener to decrement button
-decrementEl.addEventListener("click", function(){ count--; setCounterText});
+decrementEl.addEventListener("click", function(){ 
+  // stops counting at down when it reaching 0. will not turn negative
+  if (count >0 ){
+  count--; 
+  setCounterText()
+  }
+});

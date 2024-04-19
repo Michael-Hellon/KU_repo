@@ -21,7 +21,7 @@ function renderLastGrade() {
   if (lastGrade !== null) {
     document.getElementById('saved-name').innerHTML = lastGrade.student;
     document.getElementById('saved-grade').innerHTML = lastGrade.grade;
-    document.getElementById('saved-comment').innerHTML = lastGrade.comment;
+    document.getElementById('saved-comment').innerHTML = lastGrade.comment; // adds HTML code... Say a blog (maybe?)
   }
 }
 

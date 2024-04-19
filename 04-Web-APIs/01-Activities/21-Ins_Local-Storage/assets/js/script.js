@@ -2,7 +2,7 @@ const counter = document.querySelector('#counter');
 const addButton = document.querySelector('#add');
 const subtractButton = document.querySelector('#subtract');
 
-let count = localStorage.getItem('count');
+let count = localStorage.getItem('count'); //
 
 counter.textContent = count;
 
@@ -21,3 +21,7 @@ subtractButton.addEventListener('click', function () {
     localStorage.setItem('count', count);
   }
 });
+
+
+
+// TEST //

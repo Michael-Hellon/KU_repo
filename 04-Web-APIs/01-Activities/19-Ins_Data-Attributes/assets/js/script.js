@@ -2,12 +2,12 @@ const imageContainer = document.querySelector('.img-container');
 
 // Listen for any clicks within the img-container div
 imageContainer.addEventListener('click', function (event) {
-  const element = event.target;
+  const element = event.target; //gives you the exact object you clicked on
 
   // Check if the clicked element was an image
-  if (element.matches('img')) {
+  if (element.matches('img')) { // only care about images
     // Get the current value of the image's data-state attribute
-    const state = element.getAttribute('data-state');
+    const state = element.getAttribute('data-state'); // encode our elements so we can determine our current element
 
     if (state === 'still') {
       // Change the data-state attribute's value

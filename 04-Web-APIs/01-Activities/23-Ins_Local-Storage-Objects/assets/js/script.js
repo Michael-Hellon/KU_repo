@@ -9,10 +9,11 @@ saveButton.addEventListener('click', function (event) {
   const studentGrade = {
     student: student.value,
     grade: grade.value,
-    comment: comment.value.trim(),
+    comment: comment.value.trim(), // .trim  removes the extra white space from the comment
+
   };
 
-  localStorage.setItem('studentGrade', JSON.stringify(studentGrade));
+  localStorage.setItem('studentGrade', JSON.stringify(studentGrade)); // takes js object and converts to a JSON string
   renderMessage();
 });
 
