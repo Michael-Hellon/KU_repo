@@ -12,23 +12,21 @@ let tempStorageObject = {
   text: [],
 };
 
-// ? We neet to keep track of the current element that is being dragged
+// ? We need to keep track of the current element that is being dragged
 let currentElement = null;
 
 clearBtn.addEventListener('click', function () {
-  localStorage.clear(); // clears all of LS
-  window.location.reload(); 
+  localStorage.clear();
+  window.location.reload();
 });
 
 function updateLocalStorage() {
-  // TODO: Update the local storage with the tempStorageObject
   localStorage.setItem('moodBoardData', JSON.stringify(tempStorageObject));
 }
 
 // ? Function to load from local storage. This function will be called on page load.
 function loadFromLocalStorage() {
-  // TODO: Load and parse the data from local storage and paint the images and text on the mood board
-  const storedData = JSON.parse(localStorage.get.item('moodBoardData'));
+  const storedData = JSON.parse(localStorage.getItem('moodBoardData'))
 
   if (storedData) {
     tempStorageObject = storedData;
@@ -43,13 +41,13 @@ function loadFromLocalStorage() {
       moodBoardEl.appendChild(img);
     });
 
-    // TODO: Paint the stored text to the mood board
+    // Paint the stored text to the mood board
     tempStorageObject.text.forEach((txt) => {
-      const textDiv = document.createElement('img');
+      const textDiv = document.createElement('div');
       textDiv.src = txt.url;
       textDiv.style.left = txt.left;
       textDiv.style.top = txt.top;
-      textDiv.classList.add('text-itme');
+      textDiv.classList.add('text-item');
       moodBoardEl.appendChild(textDiv);
     });
   }
@@ -59,12 +57,13 @@ function loadFromLocalStorage() {
 addImageBtn.addEventListener('click', function () {
   const imageUrl = imageUrlInput.value;
   if (imageUrl) {
-    // TODO: Create an image element, add a class of draggable, set the src attribute to the image URL provided by the user, and append it to the body element
+    // Create an image element, add a class of draggable, set the src attribute to the image URL provided by the user, and append it to the body element
     const img = document.createElement('img');
-    img.src = image.url;
+    img.src = imageUrl;
     img.classList.add('draggable');
     document.body.appendChild(img);
-    // TODO: Set the `currentElement` to the image element you create.
+
+    // Set the `currentElement` to the image element you create.
     currentElement = img;
 
     // ? We attach the mouse move event listener to the document and the mood board div so that the element can be dragged anywhere on the screen and dropped only on the mood board div.
@@ -90,7 +89,9 @@ addTextBtn.addEventListener('click', function () {
 });
 
 function attachMouseListeners() {
-  // TODO: Attach the mouse move event listener to the document and the click listener to the mood board div so that the element can be dragged anywhere on the screen, but dropped only on the mood board div.
+  // Attach the mouse move event listener to the document and the click listener to the mood board div so that the element can be dragged anywhere on the screen, but dropped only on the mood board div.
+  document.addEventListener('mousemove', mouseMoveHandler);
+  moodBoardEl.addEventListener('click', placeElementClickHandler);
 }
 
 // ? This is the event handler for the mouse move event. This will be called whenever the mouse is moved on the screen.
@@ -107,10 +108,10 @@ function mouseMoveHandler(event) {
 // ? When we click, we find the position of the mouse relative to the mood board and update the position of the element accordingly. to "place" it on the mood board.
 function placeElementClickHandler(event) {
   if (currentElement) {
-    // TODO: Explain what getBoundingClientRect() does
+    // The Element.getBoundingClientRect() method returns a DOMRect object providing information about the size of an element and its position relative to the viewport. Stores image location information.
     const moodBoardRect = moodBoardEl.getBoundingClientRect();
 
-    // TODO: Explain what the following code does
+    // Calculates the position so that the top left corner of the element aligns with the mouse click position.
     const left = `${event.clientX - moodBoardRect.left}px`;
     const top = `${event.clientY - moodBoardRect.top}px`;
 
@@ -118,13 +119,13 @@ function placeElementClickHandler(event) {
     currentElement.style.left = left;
     currentElement.style.top = top;
 
-    // TODO: Explain why we remove the draggable class from the element
-    currentElement.classList.remove('draggable');
+    // We want to make this element no longer draggable after placement.
+    //currentElement.classList.remove('draggable');
 
     // ? Append the element to the mood board with the already calculated position.
     moodBoardEl.appendChild(currentElement);
 
-    // TODO: Explain what the `tagName` property is used for
+    // Using this to store the image or text data to the temp storage variable based on the type of element.
     if (currentElement.tagName === 'IMG') {
       // ? Push the image object to the tempStorageObject images property/array
       tempStorageObject.images.push({
