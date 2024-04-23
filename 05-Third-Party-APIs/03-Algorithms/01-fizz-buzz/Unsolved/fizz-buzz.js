@@ -4,4 +4,14 @@
 // If a number is evenly divisible by both 3 AND 5, print "Fizz Buzz"
 // If a number is not divisible by 3 or 5, print the number
 
-var fizzBuzz = function(arr) {};
+function isMulThree(numnber) {
+    return number % 3 == 0
+}
+
+function isMulFive(number) {
+    return number %5 == 0
+}
+
+var fizzBuzz = function(arr) {
+ for (number of arr) {}
+};

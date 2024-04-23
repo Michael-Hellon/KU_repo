@@ -19,7 +19,7 @@ function handleFormSubmit(event) {
 
   // Loop through checked options to store in array
   $.each(checkedEl, function () {
-    selected.push($(this).val());
+    selected.push($(this).val()); // this refers to a single topping
   });
   console.log('Toppings: ', selected.join(', '));
 

@@ -1,4 +1,4 @@
-const passwordBtnEl = $('.password-btn');
+const passwordBtnEl = $('#password-btn');
 const passwordDisplayEl = $('#password-display');
 
 // Returns a random character that includes alphanumeric and special character values
@@ -14,6 +14,11 @@ function passwordGenerator(num) {
   }
   return password;
 }
+
+passwordBtnEl.on('click', function () {
+  const newPassword = passwordGenerator(15);
+  passwordDisplayEl.text(newPassword);
+});
 
 passwordBtnEl.on('dblclick', function () {
   const newPassword = passwordGenerator(15);

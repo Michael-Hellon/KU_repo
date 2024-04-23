@@ -53,10 +53,10 @@ for (const ability of abilities) {
 }
 
 // select all `<li>` elements on the page
-// document.querySelectorAll('li');
+document.querySelectorAll('li');
 console.log($('li'));
 
 // Alternatively use the `$.each` method
-// $.each(abilities, function(i, ability) {
-//    rootEl.append(`<li>${ability}</li>`);
-// })
+$.each(abilities, function(i, ability) {
+   rootEl.append(`<li>${ability}</li>`);
+})
