@@ -27,8 +27,8 @@ quoteEl.text("Love Challenges, Be Intrigued by Mistakes, Enjoy Effort, and Keep 
 
 quoteEl.attr("class", "fancy");
 
-// TODO: Append the author element to the quote element
+// Append the author element to the quote element
+quoteEl.append(authorEl);
 
-
-
-// TODO: Append the quote element to the HTML element with an ID of `root` in `index.html`
+// Append the quote element to the HTML element with an ID of `root` in `index.html`
+rootEl.append(quoteEl);

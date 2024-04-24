@@ -9,16 +9,17 @@ const shoppingListEl = $('#shopping-list');
 function handleFormSubmit(event) {
     event.preventDefault();
 
-    const shoppingItem = $('input[name="shopping-input"]').val('');
-
+    const shoppingItem = $('input[name="shopping-input"]').val(); // no '' on this one
+    
     if (!shoppingItem) {
         console.warn("no shopping item in form!");
         return;
     }
 
-    shoppingListEl.append('<li>${shoppingItem}</li>');
+    shoppingListEl.append(`<li>${shoppingItem}</li>`);
 
     $('input[name="shopping-input"]').val('');
 }
 
 shoppingFormEl.on('submit', handleFormSubmit);
+

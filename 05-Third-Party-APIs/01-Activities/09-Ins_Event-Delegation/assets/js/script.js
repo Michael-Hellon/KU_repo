@@ -54,7 +54,7 @@ function renderLetters() {
 }
 
 // Delegate event listener to the parent element, <div id="buttons">
-buttonListEl.on('click', '.letter-button', function (event) {
+buttonListEl.on('click', '.letter-button', function (event) { // uses .on for eventListener
   const displayLetterEl = $('<div>');
 
   displayLetterEl.addClass('letter');
