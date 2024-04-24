@@ -41,4 +41,13 @@
   color: var(--brown)
 }
 
+.custom-card {
+  color: var(--brown);
+  border-color: var(--teal);
+}
+
+.custom-card-header {
+  background-color: var(--teal);
+  color: var(--lightteal);
+}
 
