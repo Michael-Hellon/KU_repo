@@ -66,3 +66,8 @@ $(function () {
 
 // Add interaction here
 //
+$(function () {
+  $("#skills-list").sortable({ // ("#skills-list") the element you want sortable
+    placeholder: "ui-state-highlight" // highlights where its going to be dropped 
+  });
+});

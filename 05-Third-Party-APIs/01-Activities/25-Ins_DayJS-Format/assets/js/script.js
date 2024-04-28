@@ -13,7 +13,7 @@ $('#3a').text(reformatDate);
 
 // 4. I need to place my recycling bin on the curb on every odd week of the year for collection. Do I need to put out my recycling bin out this week?
 // Dayjs' .diff() method does NOT include partial weeks in its calculation.
-const beginningOfYear = dayjs('2022-01-01');
+const beginningOfYear = dayjs('2024-01-01');
 const weekNum = today.diff(beginningOfYear, 'week');
 
 // Check for odd week, then assign boolean to variable
