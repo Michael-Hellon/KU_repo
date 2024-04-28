@@ -4,11 +4,16 @@
   --teal: #71a8a7;
   --lightteal: #d5f5f5;
   --light: #fffaf7;
+
 }
 
 ::selection {
   color: var(--brown);
   background-color: var(--light);
+}
+
+body {
+    font-family: "Jersey 15", sans-serif;
 }
 
 .custom-navbar {

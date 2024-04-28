@@ -21,12 +21,27 @@ function setTime() {
   }, 1000);
 }
 
-// Function to create and append colorsplosion image
+let restart = 5;
+
+/// Function to create and append colorsplosion image
 function sendMessage() {
   timeEl.textContent = ' ';
   const imgEl = document.createElement('img');
   imgEl.setAttribute('src', 'images/image_1.jpg');
   mainEl.appendChild(imgEl);
+
+  // This restarts the clock
+  const i2 = setInterval(function () {
+    restart--;
+    if (restart === 0) {
+      mainEl.removeChild(imgEl);
+      restart = 5;
+      secondsLeft = 10;
+      clearInterval(i2);
+      setTime();
+    }
+  }, 1000);
 }
 
 setTime();
+

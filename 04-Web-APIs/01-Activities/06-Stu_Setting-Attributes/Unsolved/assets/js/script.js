@@ -31,10 +31,11 @@ site3El.children[1].children[0].setAttribute(
 site3El.children[1].children[0].setAttribute('alt', 'women working');
 site3El.children[1].children[0].setAttribute('style', 'padding:10px;');
 
-// Write Your Code Below
+// Write Your Code Below - all <h4> elements are stored in one variable.
+// style is set to: font-color:blue, fonts-size:30px, padding-left:10px; margin:0
 const divTags = document.querySelectorAll('h4');
 for (let i = 0; i < divTags.length; i++) {
-  divTags[i].setAttribute('style', 'color:blue; font-size: 30px; padding-left:  10px; margin:0;' );
+  divTags[i].setAttribute('style', 'color:blue; font-size: 30px; padding-left: 10px; margin:0;' );
 }
 
     or
