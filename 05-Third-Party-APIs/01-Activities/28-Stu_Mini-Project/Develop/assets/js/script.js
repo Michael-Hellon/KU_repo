@@ -149,6 +149,7 @@ function handleProjectFormSubmit(event) {
     dueDate: projectDate,
     status: 'to-do',
   };
+  
 
   // ? Pull the projects from localStorage and push the new project to the array
   const projects = readProjectsFromStorage();
