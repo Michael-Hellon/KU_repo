@@ -1,20 +1,26 @@
 // Write code to create a function that returns the factorial of `num`
-var factorial = function(num) {
-    return iterativeFactorial(num); 
+//
+// For example:
+// 5! == 5 * 4! == 5 * 4 * 3 * 2 * 1 == 120
+
+var factorial = function (num) {
+    return oneLinerRecursiveFactorial(num);
+};
 
 function iterativeFactorial(num) {
     let result = 1;
 
-    for (let i = num; i > 1; i--){
+    for (let i = num; i > 1; i--) {
         result = result * i;
     }
-}
-    return results
+
+    return result;
 }
 
 function recursiveFactorial(num) {
-    if (num <1) return 1;
-    return num * recursiveFactorial(num-1);
+    if (num < 1) return 1;
+    return num * recursiveFactorial(num - 1);
 }
 
-onLinerRecursiveFactorial = (num) => (num >0) ? 
+oneLinerRecursiveFactorial = (num) => (num > 0) ? num * oneLinerRecursiveFactorial(num - 1) : 1;
+
