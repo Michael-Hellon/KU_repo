@@ -46,7 +46,7 @@ function createProjectCard(project) {
   cardDeleteBtn.on('click', handleDeleteProject);
 
 
-  // ? Sets the card background color based on due date. Only apply the styles if the dueDate exists and the status is not done.
+  // Sets the card background color based on due date. Only apply the styles if the dueDate exists and the status is not done.
   if (project.dueDate && project.status !== 'done') {
     const now = dayjs();
     const taskDueDate = dayjs(project.dueDate, 'DD/MM/YYYY');
@@ -112,7 +112,7 @@ function printProjectData() {
 }
 
 // ? Removes a project from local storage and prints the project data back to the page
-function handleDeleteProject() {
+function handleDeleteProject() {   // handle delete task
   const projectId = $(this).attr('data-project-id');
   const projects = readProjectsFromStorage();
 
@@ -186,7 +186,8 @@ function handleDrop(event, ui) {
   }
   // ? Save the updated projects array to localStorage (overwritting the previous one) and render the new project data to the screen.
   localStorage.setItem('projects', JSON.stringify(projects));
-  printProjectData();
+  printProjectData(); // same as:  renderTaskList();
+
 }
 
 // ? Add event listener to the form element, listen for a submit event, and call the `handleProjectFormSubmit` function.
