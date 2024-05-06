@@ -12,6 +12,7 @@ const formSubmitHandler = function (event) {
   // trimming the input of the username to get rid of whitespace at the end of the input
   // aka sanitizing our value
   const username = nameInputEl.value.trim();
+  
   // checks that the user name is truthy  (i.e., not empty, null, or undefined)
   if (username) {
     // this pulls the repos for the username inputed
@@ -29,9 +30,9 @@ const formSubmitHandler = function (event) {
 
 // button click handler
 const buttonClickHandler = function (event) {
-  //when button is clicked, then we get the value of a specified attribute 'data-language'
+  // it is referencing a DOM element that represents the programming language to search for.
   const language = event.target.getAttribute('data-language');
-  // checcks language of user/github repo if both truthy then displays
+  // If there is no language selected, it wont fetch the repos and will clear the search term.
   if (language) {
     getFeaturedRepos(language);
 
@@ -68,8 +69,7 @@ const getUserRepos = function (user) {
 };
 
 const getFeaturedRepos = function (language) {
-  // searches for repositories with the specified language that are marked as “featured.”
-  // the results will be sorted based on the number of open issues labeled as “help wanted.”
+  // Searching for repos that are in the selected language, is featured and then sort by help wanted issues.
   const apiUrl = `https://api.github.com/search/repositories?q=${language}+is:featured&sort=help-wanted-issues`;
 
   fetch(apiUrl).then(function (response) {
@@ -95,6 +95,7 @@ const displayRepos = function (repos, searchTerm) {
 
   // loops through the list of repos for the username submitted and then builds the list of repos
   for (let repoObj of repos) {
+    // repo owners login name and then the name of the repo.
     const repoName = `${repoObj.owner.login}/${repoObj.name}`;
 
     // for each repo creates a div element with a (bootstrap class element) and assigns the given properties
@@ -112,7 +113,7 @@ const displayRepos = function (repos, searchTerm) {
     const statusEl = document.createElement('span');
     statusEl.classList = 'flex-row align-center';
 
-    // displays number of open issues if there are any
+    // displays a red X and number of open issues if there are any
     if (repoObj.open_issues_count > 0) {
       statusEl.innerHTML =
         `<i class='fas fa-times status-icon icon-danger'></i>${repoObj.open_issues_count} issue(s)`;
@@ -130,3 +131,12 @@ const displayRepos = function (repos, searchTerm) {
 // event listeners for the El
 userFormEl.addEventListener('submit', formSubmitHandler);
 languageButtonsEl.addEventListener('click', buttonClickHandler);
+
+// *************************************************
+/*
+const nameInputEl = document.querySelector('#username'); 
+    changed to: 
+    const cityInputEl = document.querySelector("#cityName");
+
+
+*/

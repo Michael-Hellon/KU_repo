@@ -5,10 +5,10 @@ const searchForm = document.querySelector("#search-form");
 function getParams() {
     const searchParams = document.location.search.split('&');
 
-    const query = searchParams[0].split('=').pop();
-    const format = searchParams[1].split('=').pop();
+    const query = searchParams[0].split('=').pop();  // cityLat
+    const format = searchParams[1].split('=').pop(); // cityLon
 
-    searchApi(query, format);
+    searchApi(query, format); // (cityLat, cityLon)
 }
 
 function searchApi(query, format) {

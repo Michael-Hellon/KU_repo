@@ -5,10 +5,11 @@ const repoContainerEl = document.querySelector('#repos-container');
 const repoSearchTerm = document.querySelector('#repo-search-term');
 
 const formSubmitHandler = function (event) {
+  // prevents the page from reloading when user clicks submit
   event.preventDefault();
-
+  // retrieves the value entered in an input field with the ID nameInputEl. The .trim() method removes any leading or trailing whitespace from the input.
   const username = nameInputEl.value.trim();
-
+  // checks that the input value isn't empty
   if (username) {
     getUserRepos(username);
 
@@ -21,11 +22,11 @@ const formSubmitHandler = function (event) {
 
 const buttonClickHandler = function (event) {
   // What is `event.target` referencing?
-  // TODO: Write your answer here
+  // it is referencing a DOM element that represents the programming language to search for.
   const language = event.target.getAttribute('data-language');
 
   // Why is this `if` block in place?
-  // TODO: Write your answer here
+  // If there is no language selected, it wont fetch the repos and will clear the search term.
   if (language) {
     getFeaturedRepos(language);
 
@@ -55,7 +56,7 @@ const getUserRepos = function (user) {
 
 const getFeaturedRepos = function (language) {
   // What are the query parameters doing here?
-  // TODO: Write your answer here
+  // Searching for repos that are in the selected language, is featured and then sort by help wanted issues.
   const apiUrl = `https://api.github.com/search/repositories?q=${language}+is:featured&sort=help-wanted-issues`;
 
   fetch(apiUrl).then(function (response) {
@@ -73,7 +74,7 @@ const displayRepos = function (repos, searchTerm) {
   if (repos.length === 0) {
     repoContainerEl.textContent = 'No repositories found.';
     // What would happen if there was no `return;` here?
-    // TODO: Write your answer here
+    // set the repoSearchTerm and then do nothing.
     return;
   }
 
@@ -81,7 +82,7 @@ const displayRepos = function (repos, searchTerm) {
 
   for (let repoObj of repos) {
     // What is the result of this string concatenation?
-    // TODO: Write your answer here
+    // repo owners login name and then the name of the repo.
     const repoName = `${repoObj.owner.login}/${repoObj.name}`;
 
     const repoEl = document.createElement('div');

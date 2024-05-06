@@ -42,6 +42,8 @@ const getUserRepos = function (user) {
         alert(`Error:${response.statusText}`);
       }
     })
+
+  // lets user know if there is an error loading page
     .catch(function (error) {
       alert('Unable to connect to GitHub');
     });
@@ -72,9 +74,12 @@ const displayRepos = function (repos, searchTerm) {
   for (let repoObj of repos) {
     const repoName = `${repoObj.owner.login}/${repoObj.name}`;
 
+    // each one of the elements is now a link 9 each repo is clickable)
     const repoEl = document.createElement('a');
     repoEl.classList = 'list-item flex-row justify-space-between align-center';
+    // sets the href attribute of the anchor element to the single-repo.html
     repoEl.setAttribute('href', `./single-repo.html?repo=${repoName}`);
+                                                  // key: value - set on single repo page
 
     const titleEl = document.createElement('span');
     titleEl.textContent = repoName;

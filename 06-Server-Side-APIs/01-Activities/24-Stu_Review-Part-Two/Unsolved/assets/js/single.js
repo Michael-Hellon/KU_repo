@@ -4,7 +4,7 @@ const limitWarningEl = document.querySelector('#limit-warning');
 
 const getRepoName = function () {
   // Where is this value coming from?
-  // TODO: Write your answer here
+  // from the query at then of the url, (everything that is after the '?' character)
   const queryString = document.location.search;
   const repoName = queryString.split('=')[1];
 
@@ -14,7 +14,7 @@ const getRepoName = function () {
     getRepoIssues(repoName);
   } else {
     // Under what condition will this run?
-    // TODO: Write your answer here
+    // this will run if repoName is Falsy / nul / undefined / empty
     document.location.replace('./index.html');
   }
 };
@@ -28,7 +28,8 @@ const getRepoIssues = function (repo) {
         displayIssues(data);
 
         // What is this checking for? Under what condition will this be `true`?
-        // TODO: Write your answer here
+        // checking get any value for "Link" from the response headers. it will be true if there is a value for "Link". ????????? @48:40
+        // the response has to include a link
         if (response.headers.get('Link')) {
           displayWarning(repo);
         }
@@ -41,7 +42,7 @@ const getRepoIssues = function (repo) {
 
 const displayIssues = function (issues) {
   // Is there a difference between this and `!issues.length`?
-  // TODO: Write your answer here
+  // no, only syntax
   if (issues.length === 0) {
     issueContainerEl.textContent = 'This repo has no open issues!';
     return;
@@ -72,7 +73,7 @@ const displayIssues = function (issues) {
 };
 
 // What does this function do?
-// TODO: Write your answer here
+// If there are more than 30 responses then it post a link to goto to view them
 const displayWarning = function (repo) {
   limitWarningEl.textContent = 'To see more than 30 issues, visit ';
 
@@ -82,7 +83,7 @@ const displayWarning = function (repo) {
   linkEl.setAttribute('target', '_blank');
 
   // Where does this appear on the page?
-  // TODO: Write your answer here
+  // Appends the link element child to the limit warning.
   limitWarningEl.appendChild(linkEl);
 };
 

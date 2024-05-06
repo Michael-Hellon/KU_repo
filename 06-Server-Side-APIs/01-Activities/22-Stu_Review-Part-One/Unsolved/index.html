@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <!-- Why does the `<link>` to `style.css` have to come last? -->
+  <!-- It comes last to set the final style for the page-->
   <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
   <link rel="stylesheet" href="./assets/css/style.css" />
@@ -16,6 +17,7 @@
   <header class="hero">
     <h1 class="app-title">
       <!-- TODO: What does this `<i>` element do? Where do these classes come from? -->
+      <!-- <i> element is for icons.  these classes come from the font awesome library-->
       <i class="fab fa-github"></i> Git it Done!
     </h1>
     <p>Search for a GitHub user or click on a language to see a list of repositories and how many open issues they have!
@@ -39,6 +41,8 @@
         <h3 class="card-header text-uppercase">Search By Topic</h3>
         <div id="language-buttons" class="card-body">
           <!-- TODO: How are the `data-language` attributes being used? -->
+          <!-- searches for the selected programming language, attributes are used to search for repos when a button is clicked. -->
+          <!-- prefiltering -->
           <button data-language="javascript" class="btn">JavaScript</button>
           <button data-language="html" class="btn">HTML</button>
           <button data-language="css" class="btn">CSS</button>
@@ -48,7 +52,7 @@
 
     <div class="col-12 col-md-8">
       <h2 class="subtitle">Showing Repositories for: <span id="repo-search-term"></span></h2>
-      <!-- TODO: Why is this `<div>` empty? What goes in here? -->
+      <!-- TODO: Why is this `<div>` empty? is empty because this is where the repository data is rendered to -->
       <div id="repos-container" class="list-group"></div>
     </div>
   </main>
