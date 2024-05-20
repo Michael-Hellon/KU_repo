@@ -1,0 +1,12 @@
+[submodule "08-Project-1-Contd/02-Challenge/4-of-Spades"]
+	path = 08-Project-1-Contd/02-Challenge/4-of-Spades
+	url = https://github.com/AustinSkidmore1997/4-of-Spades.git
+[submodule "08-Project-1-Contd/02-Challenge/PetFinder"]
+	path = 08-Project-1-Contd/02-Challenge/PetFinder
+	url = https://github.com/Michael-Hellon/PetFinder.git
+[submodule "08-Project-1-Contd/02-Challenge/cinema-quiz"]
+	path = 08-Project-1-Contd/02-Challenge/cinema-quiz
+	url = https://github.com/EXCervantes/cinema-quiz.git
+[submodule "08-Project-1-Contd/02-Challenge/FlickPicker"]
+	path = 08-Project-1-Contd/02-Challenge/FlickPicker
+	url = https://github.com/JohnKihm/FlickPicker.git
