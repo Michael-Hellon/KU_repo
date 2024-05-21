@@ -73,16 +73,16 @@ const netflixQueue = {
   },
   printQueue: function () { // 
     let list = "";
-    for (let i = this.queue.length - 1; i >= 0; i--) { // error on this line
+    for (let i = this.queue.length - 1; i >= 0; i--) { 
       const currentMovie = this.queue[i];
       list += (this.queue.length - i) + ". " + currentMovie + "\n";
     }
     return list;
   }
-
+  // original code
   // printQueue: () => { //  need to add function
   //   let list = "";
-  //   for (let i = this.queue.length - 1; i >= 0; i--) { // error on this line
+  //   for (let i = this.queue.length - 1; i >= 0; i--) {
   //     const currentMovie = this.queue[i];
   //     list += (this.queue.length - i) + ". " + currentMovie + "\n";
   //   }
