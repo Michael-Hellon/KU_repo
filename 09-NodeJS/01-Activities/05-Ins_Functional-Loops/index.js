@@ -27,7 +27,9 @@ console.log(canWatchRatedR);
 // Whatever is returned from the callback at each iteration is what goes into that index of the new array
 
 const cardedMoviePatrons = moviePatrons.map(patron => {
-  // Copy the object being iterated over so that we don't affect the existing object (immutability). Note that this is not the ideal way of copying the object in this case and we will be using another approach (spread operator) for copying objects later in the module.
+  // Copy the object being iterated over so that we don't affect the existing object (immutability). 
+  // Note that this is not the ideal way of copying the object in this case and we will be using another 
+  // approach (spread operator) for copying objects later in the module.
   const pObj = JSON.parse(JSON.stringify(patron));
   // Do everything else the same
   if (pObj.age >= 17) {

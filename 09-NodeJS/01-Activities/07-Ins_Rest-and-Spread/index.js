@@ -26,3 +26,27 @@ const dragons = ["Drogon", "Viserion", "Rhaegal"];
 const weapons = ["dragonglass", ...dragons, "wildfire"]; // notice the spread operator ...dragons
 
 console.log(weapons); // prints ["dragonglass", "Drogon", "Viserion", "Rhaegal", "wildfire"]
+
+// in node
+// > console.log(add(1,2,3,4,5));
+// Uncaught ReferenceError: add is not defined
+// > // returns 3
+// undefined
+// > const addRest = ( ...nums) => {
+// ...   let sum = 0;
+// ...   for (let num of nums) sum += num;
+// ...   return sum;
+// ... }
+// undefined
+// >
+// > console.log(addRest(1,2,3,4,5));
+// 15
+// undefined
+// > addRest(1)
+// 1
+// > let dragons = {'drogon', 'Viserion', 'Rhaegal
+// let dragons = {'drogon', 'Viserion', 'Rhaegal
+//                ^^^^^^^^
+
+// Uncaught SyntaxError: Unexpected string
+// > .exit

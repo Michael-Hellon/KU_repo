@@ -71,14 +71,24 @@ const netflixQueue = {
     this.queue.unshift(movie);
     return "Adding a movie!";
   },
-  printQueue: () => {
+  printQueue: function () { // 
     let list = "";
-    for (let i = this.queue.length - 1; i >= 0; i--) {
+    for (let i = this.queue.length - 1; i >= 0; i--) { // error on this line
       const currentMovie = this.queue[i];
       list += (this.queue.length - i) + ". " + currentMovie + "\n";
     }
     return list;
   }
+
+  // printQueue: () => { //  need to add function
+  //   let list = "";
+  //   for (let i = this.queue.length - 1; i >= 0; i--) { // error on this line
+  //     const currentMovie = this.queue[i];
+  //     list += (this.queue.length - i) + ". " + currentMovie + "\n";
+  //   }
+  //   return list;
+  // }
+
 };
 
 console.log(`
