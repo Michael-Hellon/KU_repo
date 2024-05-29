@@ -1,36 +1,43 @@
-function Animal(name, age, breed) {
+class Animal {
+  constructor(name, age, breed) {
   this.name = name;
   this.age = age;
   this.breed = breed;
-  this.nap = function () {
+  }
+  nap() {
     console.log('Zzzzzzzzz');
   };
-  this.getLives = function () {
+  getLives() {
     return 1;
   };
 }
 
-function Dog(name, age, breed, puppies) {
-  Animal.call(this, name, age, breed);
-  this.puppies = puppies;
-}
+class Dog extends Animal {
+  constructor(name, age, breed, puppies) {
+   super(name, age, breed);
+    this.puppies = puppies;
+  }
 
-Dog.prototype.bark = function () {
-  console.log('Woof!');
-};
-
-function Cat(name, age, breed, kittens) {
-  Animal.call(this, name, age, breed);
-  this.kittens = kittens;
-  // 'getLives()' method is overriden to provide Cat with a different functionality
-  this.getLives = function () {
-    return 9;
+  bark () {
+    console.log('Woof!');
   };
 }
 
-Cat.prototype.meow = function () {
-  console.log('Meow!');
-};
+class Cat extends Animal {
+  constructor(name, age, breed, kittens) {
+    super(name, age, breed);
+    this.kittens = kittens;
+    }
+  // 'getLives()' method is overriden to provide Cat with a different functionality
+  getLives() {
+    // return 9;
+    return super.getLives() + 8
+  };
+
+  meow() {
+    console.log('Meow!');
+  };
+}
 
 const dog = new Dog('Rex', 2, 'Bulldog', ['Baxter', 'Marley', 'Scooby']);
 const cat = new Cat('Tom', 2, 'Shorthair', ['Garfield', 'Felix', 'Salem']);

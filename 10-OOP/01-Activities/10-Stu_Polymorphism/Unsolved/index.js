@@ -6,9 +6,18 @@ class ForumItem {
     this.createdOn = createdOn;
   }
 
-  printMetaData() {
-    console.log(`Created by ${this.authorName} on ${this.createdOn}`);
+  metaData() {
+    return `Created by ${this.authorName} on ${this.createdOn}`;
   }
+
+  printMetaData() {
+    console.log(this.metaData());
+  }
+
+
+  // printMetaData() {
+  //   console.log(`Created by ${this.authorName} on ${this.createdOn}`);
+  // }
 }
 
 class BlogPost extends ForumItem {
@@ -28,6 +37,15 @@ class Comment extends ForumItem {
     super(authorName, createdOn);
     this.text = text;
   }
+  // missing this 2 lines of code with `with ${this.text}`);
+
+  metaData() {
+    return super.metaData() + ` with ${this.text}`;
+  }
+
+  // printMetaData() {
+  //   console.log(`Created by ${this.authorName} on ${this.createdOn} with ${this.text}`);
+  // }
 }
 
 const newPost = new BlogPost(
@@ -46,3 +64,5 @@ newPost.printMetaData();
 
 // TODO: Determine why the comment meta data does not include the text and modify the code so that it does.
 newComment.printMetaData();
+// console.log(newPost);
+// console.log(newComment);
