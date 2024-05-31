@@ -2,7 +2,7 @@ const BlogPost = require('../lib/BlogPost.js');
 const Comment = require('../lib/Comment.js');
 
 describe('BlogPost', () => {
-  // TODO: Add a comment describing this test.
+  // test to verify Blopost can be insta
   describe('Instantiate', () => {
     it('should be an instance of BlogPost class', () => {
       const blogpost = new BlogPost();
@@ -65,7 +65,7 @@ describe('BlogPost', () => {
     });
   });
 
-  // TODO: Add a comment describing this test.
+  // verify that addComent ands a comment to the blog post
   describe('addComment() method', () => {
     it('should add comment to comments array', () => {
       const blogpost = new BlogPost();

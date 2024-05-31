@@ -1,7 +1,7 @@
 const Comment = require('../lib/Comment.js');
 
 describe('Comment', () => {
-  // TODO: Add a comment describing this test.
+  // test to verify that comment can be instantiated
   describe('Instantiate', () => {
     it('should be an instance of Comment class', () => {
       const comment = new Comment();

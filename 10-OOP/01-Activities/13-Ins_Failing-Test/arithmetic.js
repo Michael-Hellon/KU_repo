@@ -22,7 +22,10 @@ Arithmetic.prototype.quotient = (a, b) => {
 };
 
 // Constructor Arithmetic is given a modulus method that currently doesn't do anything.
-Arithmetic.prototype.modulus = (a, b) => {}
+Arithmetic.prototype.modulus = (a, b) => {
+  return a % b // missing this line
+
+}
 
 // Constructor Arithmetic is exported from the file.
 module.exports = Arithmetic;
