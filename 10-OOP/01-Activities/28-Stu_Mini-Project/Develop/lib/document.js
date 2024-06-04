@@ -1,4 +1,7 @@
 // TODO: Import your Header, TaskList, and TaskListItem
+const Header = require('./components/header');
+const TaskList = require('./components/taskList');
+const TaskListItem = require('./components/taskListItem');
 
 function createDocument(title, tasks = []) {
   // TODO: Create a new Header
@@ -12,13 +15,13 @@ function createDocument(title, tasks = []) {
       <meta charset="UTF-8" />
       <meta http-equiv="X-UA-Compatible" content="IE=edge" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>YOUR TITLE HERE</title>
+      <title>${title}</title>
       <link rel="stylesheet" href="../dist/style.css" />
     </head>
     <body>
       <div class="card">
-        YOUR HEADER
-        YOUR TASKLIST
+        ${header.render}
+        ${tasklist.render}
       </div>
     </body>
   </html>
