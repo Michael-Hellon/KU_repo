@@ -13,14 +13,14 @@ readFile('./data/post.json', 'utf-8').then((json) => {
     blogData.title,
     blogData.text,
     blogData.author,
-    blogData.creation,
-  )
-const html = post.render();
+    blogData.createdOn
+  );
+  const html = post.render();
 //  Write the html to file
   return writeFile('./dist/post.html', html);
 }).then(() => {
     console.log('Created post.html');
-  })
+  });
 
 
 // TODO: print a message in the console only after the html file is written.

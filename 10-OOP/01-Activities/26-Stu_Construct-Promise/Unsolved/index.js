@@ -1,7 +1,9 @@
 const http = require('http');
 
 // TODO: What does this function return?
-const asyncRequest = (url) =>
+// Returns a promise that allows the user to handle the htps request asynch.
+// it also allows them to handle an error or success statement
+const asyncRequest = (url) => // this is a manual representation of a fetch request
   new Promise((resolve, reject) => {
     let error;
     let rawData = '';
@@ -30,9 +32,12 @@ const asyncRequest = (url) =>
         // response status code was 200.
         if (error) {
           // TODO: What the following line do?
+          // this will pass the error value to reject callback which allows us to return a failed value from the promise (return failed)
           reject(error);
         } else {
           // TODO: What does the following line do?
+          // this will pass the success value to resolve callback which allows us to return a successful value from the promise (return successful)
+
           resolve(rawData);
         }
       });
@@ -40,6 +45,7 @@ const asyncRequest = (url) =>
 
 asyncRequest('http://numbersapi.com/random/trivia')
   // TODO: When is the callback function passed to .then() called by the promise?
+  // callback is passed to the .then and logs the data from the request to console when the resolve is called
   .then((data) => console.log(data))
-  // TODO: When is the callback function passed to .catch() called by the promise?
+  // callback is passed to the .then and logs the error from the request to console when the reject is called
   .catch((error) => console.log(error));

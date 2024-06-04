@@ -3,6 +3,9 @@ const BlogPost = require('./lib/blogPost');
 
 // TODO: Update the code below so that the exception is caught and a message is logged in the terminal.
 
+
+
+
 // The string to readFile is intentionally incorrect to force the error.
 readFile('./data/post.json', 'utf-8')
   .then((json) => {
@@ -18,4 +21,8 @@ readFile('./data/post.json', 'utf-8')
   })
   .then(() => {
     console.log('Created post.html');
+  })
+  .catch((err) => {
+    console.log(err);
+    console.log('unable to read post data');
   });
