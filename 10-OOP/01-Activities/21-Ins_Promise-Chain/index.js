@@ -12,3 +12,17 @@ inquirer
   .then((res) => res.json())
   // json data is accepted as user and logged to the console
   .then((user) => console.log(user));
+
+const getGithubInfo = async () => {
+  const result = await inquirer
+  .prompt({
+    type: 'input',
+    name: 'username',
+    message: 'Enter a Github Username:',
+  })
+
+  const githubResponse = await fetch(`https://api.github.com/user${result.username}`);
+  const githubData = await githubResponse.json();
+  console.log(githubData);
+}
+getGithubInfo();

@@ -1,8 +1,10 @@
 // TODO: Define a Validate class with an isPassword() function that takes in a password parameter.
 class Validate() {
-    constructor() {
-        isPassword()
-    }
+    constructor() {}
+        isPassword(str){
+
+        }
+
 // Validate.prototype.isPassword = (password) => {
 //     password === "PA$$word"
 
