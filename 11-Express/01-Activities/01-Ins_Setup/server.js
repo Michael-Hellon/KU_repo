@@ -14,10 +14,9 @@ const PORT = 3001;
 app.use(express.static('public'));
 
 // Create Express.js routes for default '/', '/send' and '/routes' endpoints
-app.get('/', (req, res) => res.send('Navigate to /send or /routes'));
+app.get('/', (req, res) => res.send('Navigate to /send or /routes')); // (request, response)
 
-app.get('/send', (req, res) =>
-  res.sendFile(path.join(__dirname, 'public/sendFile.html'))
+app.get('/send', (req, res) => res.sendFile(path.join(__dirname, 'public/sendFile.html'))
 );
 
 app.get('/routes', (req, res) =>
