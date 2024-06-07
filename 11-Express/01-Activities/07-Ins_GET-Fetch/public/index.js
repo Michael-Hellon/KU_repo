@@ -4,7 +4,7 @@ const termButton = document.getElementById('term-btn');
 
 // Invoked by the buttonHandler function to fetch terms from the data store
 const getTerms = () =>
-  fetch('/api/terms', {
+  fetch('/api/terms', {  // coming from line 14 server,js
     method: 'GET',
   })
     .then((res) => res.json())

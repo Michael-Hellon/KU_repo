@@ -3,7 +3,7 @@ const termButton = document.getElementById('term-btn');
 
 const getPets = () =>
   fetch('/api/terms', {
-    method: 'POST',
+    method: 'GET',
     body: '',
   })
     .then((res) => res.json())
