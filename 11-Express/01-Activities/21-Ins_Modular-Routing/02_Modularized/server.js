@@ -16,6 +16,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
 // Send all the requests that begin with /api to the index.js in the routes folder
+// https://exemple.com/api/feedback
 app.use('/api', api);
 
 // This view route is a GET route for the homepage

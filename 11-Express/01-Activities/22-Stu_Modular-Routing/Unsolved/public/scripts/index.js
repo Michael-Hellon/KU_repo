@@ -1,93 +1,105 @@
-const tipForm = document.getElementById('tip-form');
-const tipsContainer = document.getElementById('tip-container');
+const router = require('express').Router();
 
-const createCard = (tip) => {
-  // Create card
-  const cardEl = document.createElement('div');
-  cardEl.classList.add('card', 'mb-3');
-  cardEl.setAttribute('key', tip.tip_id);
+// Import our files containing our routes
+const feedbackRouter = require('./feedback');
+const tipsRouter = require('./tips');
 
-  // Create card header
-  const cardHeaderEl = document.createElement('h4');
-  cardHeaderEl.classList.add(
-    'card-header',
-    'bg-primary',
-    'text-light',
-    'p-2',
-    'm-0'
-  );
-  cardHeaderEl.innerHTML = `${tip.username} </br>`;
+router.use('/feedback', feedbackRouter);
+router.use('/tips', tipsRouter);
 
-  // Create card body
-  const cardBodyEl = document.createElement('div');
-  cardBodyEl.classList.add('card-body', 'bg-light', 'p-2');
-  cardBodyEl.innerHTML = `<p>${tip.tip}</p>`;
+module.exports = router;
 
-  // Append the header and body to the card element
-  cardEl.appendChild(cardHeaderEl);
-  cardEl.appendChild(cardBodyEl);
 
-  // Append the card element to the tips container in the DOM
-  tipsContainer.appendChild(cardEl);
-};
+// const tipForm = document.getElementById('tip-form');
+// const tipsContainer = document.getElementById('tip-container');
 
-// Get a list of existing tips from the server
-const getTips = () =>
-  fetch('api/tips', {
-    method: 'GET', // or 'PUT'
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    // body: JSON.stringify(data),
-  })
-    .then((response) => response.json())
-    .then((data) => data)
-    .catch((error) => {
-      console.error('Error:', error);
-    });
+// const createCard = (tip) => {
+//   // Create card
+//   const cardEl = document.createElement('div');
+//   cardEl.classList.add('card', 'mb-3');
+//   cardEl.setAttribute('key', tip.tip_id);
 
-// Post a new tip to the page
-const postTip = (tip) =>
-  fetch('api/tips', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(tip),
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      alert(data);
-      createCard(tip);
-    })
-    .catch((error) => {
-      console.error('Error:', error);
-    });
+//   // Create card header
+//   const cardHeaderEl = document.createElement('h4');
+//   cardHeaderEl.classList.add(
+//     'card-header',
+//     'bg-primary',
+//     'text-light',
+//     'p-2',
+//     'm-0'
+//   );
+//   cardHeaderEl.innerHTML = `${tip.username} </br>`;
 
-// When the page loads, get all the tips
-getTips().then((data) => data.forEach((tip) => createCard(tip)));
+//   // Create card body
+//   const cardBodyEl = document.createElement('div');
+//   cardBodyEl.classList.add('card-body', 'bg-light', 'p-2');
+//   cardBodyEl.innerHTML = `<p>${tip.tip}</p>`;
 
-// Function to handle when a user submits the feedback form
-const handleFormSubmit = (e) => {
-  e.preventDefault();
-  console.log('Form submit invoked');
+//   // Append the header and body to the card element
+//   cardEl.appendChild(cardHeaderEl);
+//   cardEl.appendChild(cardBodyEl);
 
-  // Get the value of the tip and save it to a variable
-  const tipContent = document.getElementById('tipText').value;
+//   // Append the card element to the tips container in the DOM
+//   tipsContainer.appendChild(cardEl);
+// };
 
-  // get the value of the username and save it to a variable
-  const tipUsername = document.getElementById('tipUsername').value.trim();
+// // Get a list of existing tips from the server
+// const getTips = () =>
+//   fetch('api/tips', {
+//     method: 'GET', // or 'PUT'
+//     headers: {
+//       'Content-Type': 'application/json',
+//     },
+//     // body: JSON.stringify(data),
+//   })
+//     .then((response) => response.json())
+//     .then((data) => data)
+//     .catch((error) => {
+//       console.error('Error:', error);
+//     });
 
-  // Create an object with the tip and username
-  const newTip = {
-    username: tipUsername,
-    topic: 'UX',
-    tip: tipContent,
-  };
+// // Post a new tip to the page
+// const postTip = (tip) =>
+//   fetch('api/tips', {
+//     method: 'POST',
+//     headers: {
+//       'Content-Type': 'application/json',
+//     },
+//     body: JSON.stringify(tip),
+//   })
+//     .then((response) => response.json())
+//     .then((data) => {
+//       alert(data);
+//       createCard(tip);
+//     })
+//     .catch((error) => {
+//       console.error('Error:', error);
+//     });
 
-  // Make a fetch POST request to the server
-  postTip(newTip);
-};
+// // When the page loads, get all the tips
+// getTips().then((data) => data.forEach((tip) => createCard(tip)));
 
-// Listen for when the form is submitted
-tipForm.addEventListener('submit', handleFormSubmit);
+// // Function to handle when a user submits the feedback form
+// const handleFormSubmit = (e) => {
+//   e.preventDefault();
+//   console.log('Form submit invoked');
+
+//   // Get the value of the tip and save it to a variable
+//   const tipContent = document.getElementById('tipText').value;
+
+//   // get the value of the username and save it to a variable
+//   const tipUsername = document.getElementById('tipUsername').value.trim();
+
+//   // Create an object with the tip and username
+//   const newTip = {
+//     username: tipUsername,
+//     topic: 'UX',
+//     tip: tipContent,
+//   };
+
+//   // Make a fetch POST request to the server
+//   postTip(newTip);
+// };
+
+// // Listen for when the form is submitted
+// tipForm.addEventListener('submit', handleFormSubmit);

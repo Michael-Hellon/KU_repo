@@ -37,12 +37,20 @@ app.post('/api/reviews', (req, res) => {
   // If all the required properties are present
   if (product && review && username) {
     // Variable for the object we will save
+  
     const newReview = {
       product,
       review,
       username,
       review_id: uuid(),
     };
+
+    fs.readFile('/db/reviews.json', 'utf8', (err, data) =>
+    if (err) {
+      
+    })
+
+
 
     // Convert the data to a string so we can save it
     const reviewString = JSON.stringify(newReview);
