@@ -10,4 +10,14 @@ class MyOne extends Test {
     }
 }
 
-module.exports = { Test, MyOne }
+class ASDF {
+    constructor() {
+  
+    }
+  
+    setUsername(username) {
+      this.username = username;
+    }
+  }
+
+module.exports = { Test, MyOne, ASDF }

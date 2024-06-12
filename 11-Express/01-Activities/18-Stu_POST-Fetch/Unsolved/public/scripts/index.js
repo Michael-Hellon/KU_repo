@@ -4,17 +4,14 @@ const reviewInput = document.getElementById('review');
 const reviewForm = document.getElementById('review-form');
 
 // TODO: Add a comment explaining the functionality of this helper function
-  // posting the review data. create a new review
 const postReview = (review) =>
   // TODO: Add a comment explaining what sort of data we need to provide when invoking the fetch function for a POST request
-    // JS obj representing the review data
   fetch('/api/reviews', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
     // TODO: Add a comment describing why one would need to convert the JSON object to a string in this instance
-      // needs to convert to a string because fetch function requires it to be a string and not a JS Obj
     body: JSON.stringify(review),
   })
     .then((res) => res.json())
@@ -23,7 +20,6 @@ const postReview = (review) =>
       return data;
     })
     // TODO: Add a comment describing the functionality of the catch statement
-      // catching error and logging it to the console
     .catch((error) => {
       console.error('Error in POST request:', error);
     });

@@ -1,12 +1,10 @@
-// front end
-
 console.log('hello');
 const termEl = document.getElementById('terms');
 const termButton = document.getElementById('term-btn');
 
 // Invoked by the buttonHandler function to fetch terms from the data store
 const getTerms = () =>
-  fetch('/api/terms', {  // coming from the arrow function on line 15 server,js
+  fetch('/api/terms', {
     method: 'GET',
   })
     .then((res) => res.json())

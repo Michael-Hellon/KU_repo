@@ -1,0 +1,32 @@
+[
+  {
+    "product": "Happy Hacking Keyboard Professional 2",
+    "username": "kbdfan05",
+    "review": "It rules!",
+    "review_id": "c763"
+  },
+  {
+    "product": "Das Keyboard",
+    "review": "I love it, but the keyboard is too big for my desk.",
+    "username": "coolperson12",
+    "review_id": "121d"
+  },
+  {
+    "product": "test product",
+    "review": "its cool",
+    "username": "karl@protonmail.com",
+    "review_id": "235d"
+  },
+  {
+    "product": "2nd product",
+    "review": "its ok",
+    "username": "asdf@example.com",
+    "review_id": "f7a3"
+  },
+  {
+    "product": "test product",
+    "review": "its cool",
+    "username": "karl@protonmail.com",
+    "review_id": "e940"
+  }
+]

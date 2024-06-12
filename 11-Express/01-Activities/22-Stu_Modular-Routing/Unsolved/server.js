@@ -2,10 +2,9 @@ const express = require('express');
 const path = require('path');
 
 // TODO import the routes
-const api = require('./routes/index');
 
 // Helper functions for reading and writing to the JSON file
-// const { readFromFile, readAndAppend } = require('./helpers/fsUtils');
+const { readFromFile, readAndAppend } = require('./helpers/fsUtils');
 
 // Helper method for generating unique ids
 const uuid = require('./helpers/uuid');
@@ -21,7 +20,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
 // TODO apply middleware to use /api
-app.use('/api', api);
+
 // GET Route for homepage
 app.get('/', (req, res) =>
   res.sendFile(path.join(__dirname, '/public/index.html'))
@@ -33,37 +32,34 @@ app.get('/feedback', (req, res) =>
 );
 
 // TODO move the /api/tips routes to their own file
+
+// GET Route for retrieving all the tips
+app.get('/api/tips', (req, res) => {
+  console.info(`${req.method} request received for tips`);
+  readFromFile('./db/tips.json').then((data) => res.json(JSON.parse(data)));
+});
+
+// POST Route for a new UX/UI tip
+app.post('/api/tips', (req, res) => {
+  console.info(`${req.method} request received to add a tip`);
+
+  const { username, topic, tip } = req.body;
+
+  if (username && topic && tip) {
+    const newTip = {
+      username,
+      tip,
+      topic,
+      tip_id: uuid(),
+    };
+
+    readAndAppend(newTip, './db/tips.json');
+    res.json(`Tip added successfully`);
+  } else {
+    res.error('Error in adding tip');
+  }
+});
+
 app.listen(PORT, () =>
-  console.log(`App listening at http://localhost:${PORT} 🚀`)
+  console.log(`App listening at http://localhost:${PORT}`)
 );
-
-// // GET Route for retrieving all the tips
-// app.get('/api/tips', (req, res) => {
-//   console.info(`${req.method} request received for tips`);
-//   readFromFile('./db/tips.json').then((data) => res.json(JSON.parse(data)));
-// });
-
-// // POST Route for a new UX/UI tip
-// app.post('/api/tips', (req, res) => {
-//   console.info(`${req.method} request received to add a tip`);
-
-//   const { username, topic, tip } = req.body;
-
-//   if (username && topic && tip) {
-//     const newTip = {
-//       username,
-//       tip,
-//       topic,
-//       tip_id: uuid(),
-//     };
-
-//     readAndAppend(newTip, './db/tips.json');
-//     res.json(`Tip added successfully`);
-//   } else {
-//     res.error('Error in adding tip');
-//   }
-// });
-
-// app.listen(PORT, () =>
-//   console.log(`App listening at http://localhost:${PORT}`)
-// );

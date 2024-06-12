@@ -10,17 +10,17 @@ const app = express();
 const sortHelper = (type) =>
   termData.sort(sortData('term', 'relevance', `${type}`));
 
-// get route that returns all of the terms either sorted or not ( depending on if a querry is added)
+// TODO: Add a comment describing the functionality of this route
 
 app.get('/api/terms/', (req, res) => {
-  // checks to see if we have a querry object
+  // TODO: Add a comment describing the req.query object
 
   const hasQuery = Object.keys(req.query).length > 0;
-// sorts descending
+
   if (hasQuery && req.query.sort === 'dsc') {
     return res.json(sortHelper('dsc'));
   }
-// sorts ascending
+
   if (hasQuery && req.query.sort === 'asc') {
     return res.json(sortHelper('asc'));
   }
@@ -30,10 +30,10 @@ app.get('/api/terms/', (req, res) => {
 });
 
 // TODO: Add a comment describing what this route will return
-// returns the term if it exits in the array of termData otherwise return a json
+
 app.get('/api/term/:term', (req, res) => {
   // TODO: Add a comment describing the content of req.params in this instance
-// pulling out the term we are looking for
+
   const requestedTerm = req.params.term.toLowerCase();
 
   for (let i = 0; i < termData.length; i++) {
@@ -47,7 +47,7 @@ app.get('/api/term/:term', (req, res) => {
 });
 
 // TODO: Add a comment describing what this route will return
-// pulling out the category we are looking for
+
 app.get('/api/terms/:category', (req, res) => {
   const requestedCategory = req.params.category.toLowerCase();
   const result = [];
@@ -62,7 +62,7 @@ app.get('/api/terms/:category', (req, res) => {
 });
 
 // TODO: Add a comment describing what this route will return
-// returns all of the categotry if it ewxsts in the aray of categoryData otherwise returns a json 
+
 app.get('/api/categories', (req, res) => {
   const categories = termData.map((term) => term.category);
 

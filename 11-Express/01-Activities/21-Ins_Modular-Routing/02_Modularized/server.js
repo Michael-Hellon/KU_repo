@@ -15,8 +15,8 @@ app.use(express.urlencoded({ extended: true }));
 // Middleware to serve up static assets from the public folder
 app.use(express.static('public'));
 
+// https://example.com/api/feedback
 // Send all the requests that begin with /api to the index.js in the routes folder
-// https://exemple.com/api/feedback
 app.use('/api', api);
 
 // This view route is a GET route for the homepage
