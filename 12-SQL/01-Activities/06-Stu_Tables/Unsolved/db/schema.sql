@@ -4,3 +4,7 @@ CREATE DATABASE books_db;
 \c books_db;
 
 -- Add biography table --
+CREATE TABLE transformers (
+    id INTEGER,
+    name VARCHAR(100)
+);
