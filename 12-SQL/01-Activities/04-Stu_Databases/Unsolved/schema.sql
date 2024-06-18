@@ -1,13 +1,14 @@
 -- Write code here or enter directly in PostgreSQL shell --
-
-CREATE DATABASE sample_db;
+CREATE DATABASE SAMPLE_DB;
 
 -- Create two new databases --
-DROP DATABASE IF EXISTS sample_db;
-CREATE DATABASE books_db;
+DROP DATABASE IF EXISTS SAMPLE_DB;
 
--- Use inventory_db -- 
-\c books_db;
+CREATE DATABASE BOOKS_DB;
+
+-- Use inventory_db --
+\C BOOKS_DB;
 
 -- See database in use --
-SELECT current_database();
+SELECT
+    CURRENT_DATABASE();

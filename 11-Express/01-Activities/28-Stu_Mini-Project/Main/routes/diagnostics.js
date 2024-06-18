@@ -4,6 +4,7 @@ const { readAndAppend, readFromFile } = require('../helpers/fsUtils');
 
 // GET Route for retrieving diagnostic information
 diagnostics.get('/', (req, res) => {
+    // Logic for sending all the content of db/diagnostics.json
   readFromFile('./db/diagnostics.json').then((data) => {
     res.json(JSON.parse(data));
   })
@@ -11,6 +12,7 @@ diagnostics.get('/', (req, res) => {
 
 // POST Route for a error logging
 diagnostics.post('/', (req, res) => {
+  // Logic for appending data to the db/diagnostics.json file
   console.log(req.body);
 
   const {isValid, errors} = req.body;

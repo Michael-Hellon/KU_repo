@@ -14,9 +14,9 @@ app.use(express.json());
 const pool = new Pool(
   {
     // TODO: Enter PostgreSQL username
-    user: '',
+    user: 'postgres',
     // TODO: Enter PostgreSQL password
-    password: '',
+    password: '!*5642INdian',
     host: 'localhost',
     database: 'books_db'
   },
@@ -25,11 +25,12 @@ const pool = new Pool(
 
 pool.connect();
 
-
+// finding the total number of in stock vs out of stock books
 pool.query('SELECT COUNT(id) AS total_count FROM favorite_books GROUP BY in_stock', function (err, {rows}) {
   console.log(rows);
 });
 
+// finds min, max, avg, total quant of books based off of section
 pool.query('SELECT SUM(quantity) AS total_in_section, MAX(quantity) AS max_quantity, MIN(quantity) AS min_quantity, AVG(quantity) AS avg_quantity FROM favorite_books GROUP BY section', function (err, {rows}) {
   console.log(rows);
 });

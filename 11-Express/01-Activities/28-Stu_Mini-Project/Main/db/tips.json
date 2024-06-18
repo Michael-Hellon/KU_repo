@@ -22,5 +22,11 @@
         "tip": "This is a test tip",
         "topic": "UX",
         "tip_id": "7c49f688-22c4-4dc1-a0bb-e529eeb0994c"
+    },
+    {
+        "username": "carl Sagan",
+        "tip": "Don't use emoji's",
+        "topic": "UX",
+        "tip_id": "8c072399-0517-48de-bdfa-e96fa070746d"
     }
 ]
