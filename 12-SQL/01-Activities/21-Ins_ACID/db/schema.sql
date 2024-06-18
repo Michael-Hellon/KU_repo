@@ -1,26 +1,28 @@
--- Create a new database
-DROP DATABASE IF EXISTS university;
-CREATE DATABASE university;
+3.-- Create a new database
 
-\c university;
+DROP DATABASE IF EXISTS UNIVERSITY;
+
+CREATE DATABASE UNIVERSITY;
+
+\C UNIVERSITY;
 
 -- Create a students table
-CREATE TABLE students (
-    student_id INTEGER PRIMARY KEY,
-    student_name VARCHAR(255)
+CREATE TABLE STUDENTS (
+    STUDENT_ID INTEGER PRIMARY KEY,
+    STUDENT_NAME VARCHAR(255)
 );
 
 -- Create a courses table
-CREATE TABLE courses (
-    course_id INTEGER PRIMARY KEY,
-    course_name VARCHAR(255)
+CREATE TABLE COURSES (
+    COURSE_ID INTEGER PRIMARY KEY,
+    COURSE_NAME VARCHAR(255)
 );
 
 -- Create an enrollments table
-CREATE TABLE enrollments (
-    enrollment_id INTEGER PRIMARY KEY,
-    student_id INTEGER,
-    course_id INTEGER,
-    FOREIGN KEY (student_id) REFERENCES students(student_id),
-    FOREIGN KEY (course_id) REFERENCES courses(course_id)
+CREATE TABLE ENROLLMENTS (
+    ENROLLMENT_ID INTEGER PRIMARY KEY,
+    STUDENT_ID INTEGER,
+    COURSE_ID INTEGER,
+    FOREIGN KEY (STUDENT_ID) REFERENCES STUDENTS(STUDENT_ID),
+    FOREIGN KEY (COURSE_ID) REFERENCES COURSES(COURSE_ID)
 );
