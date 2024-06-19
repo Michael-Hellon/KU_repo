@@ -13,11 +13,9 @@ app.use(express.json());
 // Connect to database
 const pool = new Pool(
   {
-    // TODO: Enter PostgreSQL username
     user: 'postgres',
-    // TODO: Enter PostgreSQL password
-    password: '!*5642INdian',
-    host: 'localhost',
+    password: 'postgres',
+    host: '127.0.0.1',
     database: 'books_db'
   },
   console.log(`Connected to the books_db database.`)
@@ -30,7 +28,7 @@ pool.query('SELECT COUNT(id) AS total_count FROM favorite_books GROUP BY in_stoc
   console.log(rows);
 });
 
-// finds min, max, avg, total quant of books based off of section
+// min, max, avg, total quantity of books based off the section.
 pool.query('SELECT SUM(quantity) AS total_in_section, MAX(quantity) AS max_quantity, MIN(quantity) AS min_quantity, AVG(quantity) AS avg_quantity FROM favorite_books GROUP BY section', function (err, {rows}) {
   console.log(rows);
 });

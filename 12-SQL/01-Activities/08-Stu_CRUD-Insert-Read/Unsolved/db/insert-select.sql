@@ -1,4 +1,4 @@
--- inserting new rows into the biographies table
+-- TODO: What is the SQL code below doing?
 INSERT INTO biographies (id, name)
 VALUES
     ( 001, 'Diary of Anne Frank'),

@@ -1,25 +1,25 @@
 const router = require('express').Router();
 const Book = require('../../models/Book');
 
-// TODO: Add a comment describing the purpose of this route
+// setting up end point for getting all the books from the root
 router.get('/', (req, res) => {
-  // TODO: Add a comment describing the functionality of this method
+  // selecting all of the data about books and bring it back to the front end
   Book.findAll().then((bookData) => {
-    res.json(bookData);
+    res.json(bookData); // jjson response
   });
 });
 
-// TODO: Add a comment describing the purpose of this route
+// allows us to get data about paperbooks
 router.get('/paperbacks', (req, res) => {
   Book.findAll({
-    // TODO: Add a comment describing the functionality of this property
+    // sorting the books by title
     order: ['title'],
-    // TODO: Add a comment describing the functionality of this property
+    // filter for all books that are paperbacks
     where: {
       is_paperback: true
     },
     attributes: {
-      // TODO: Add a comment describing the functionality of this property
+      // leaves out these two columns in the data we return
       exclude: ['is_paperback', 'edition']
     }
   }).then((bookData) => {
@@ -27,9 +27,9 @@ router.get('/paperbacks', (req, res) => {
   });
 });
 
-// TODO: Add a comment describing the purpose of this route
+// getting a specific book by id
 router.get('/:id', (req, res) => {
-  // TODO: Add a comment describing the functionality of this method
+  // find individual book by the primary key, then return it
   Book.findByPk(req.params.id).then((bookData) => {
     res.json(bookData);
   });

@@ -1,19 +1,18 @@
 DROP DATABASE IF EXISTS books_db;
 
--- creates a DB called books?
+-- TODO: What is the SQL code below doing?
 CREATE DATABASE books_db;
 
--- switching the active data base to connects to the books_db
+-- TODO: What is the SQL code below doing?
 \c books_db;
 
--- creates a table called biographies
+-- TODO: What is the SQL code below doing?
 CREATE TABLE biographies (
 
-  -- creates a id column with a data type INTEGER and putting a check that it cannot be null
-  -- not null will check if the value in this column is null and if it.... 
+  -- TODO: What is the SQL code below doing?
   id INTEGER NOT NULL,
 
-  -- creates a name column with the data type of VARCHAR(100) and putting a check that it cannot be null
+  -- TODO: What is the SQL code below doing?
   name VARCHAR(100) NOT NULL
 );
 

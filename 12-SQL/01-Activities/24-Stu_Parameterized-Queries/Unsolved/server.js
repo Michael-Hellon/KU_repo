@@ -13,11 +13,9 @@ app.use(express.json());
 // Connect to database
 const pool = new Pool(
   {
-    // TODO: Enter PostgreSQL username
-    user: 'postrges',
-    // TODO: Enter PostgreSQL password
-    password: '!(5642INdian',
-    host: 'localhost',
+    user: 'postgres',
+    password: 'postgres',
+    host: '127.0.0.1',
     database: 'books_db'
   },
   console.log(`Connected to the books_db database.`)
@@ -27,7 +25,7 @@ pool.connect();
 
 let deletedRow = 2;
 
-pool.query(`DELETE FROM favorite_books WHERE id = $1`, [2] (err, {rows}) => {
+pool.query(`DELETE FROM favorite_books WHERE id = $1`, [deletedRow], (err, {rows}) => {
   if (err) {
     console.log(err);
   }

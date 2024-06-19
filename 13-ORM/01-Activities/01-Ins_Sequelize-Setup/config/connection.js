@@ -7,10 +7,10 @@ const sequelize = new Sequelize(
   // User
   'postgres',
   // Password
-  'password',
+  'oit',
   {
     // Database location
-    host: 'localhost',
+    host: 'localhost', // macs '127.0.0.1'
     dialect: 'postgres'
   }
 );

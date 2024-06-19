@@ -1,8 +1,1 @@
 -- Add your code below and execute file in the PostgreSQL Shell --
-SELECT
-    FAVORITE_BOOKS.BOOK_NAME AS NAME,
-    BOOK_PRICES.PRICE
-FROM
-    FAVORITE_BOOKS
-    JOIN BOOK_PRICES
-    ON FAVORITE_BOOKS.BOOK_PRICE = BOOK_PRICES.ID

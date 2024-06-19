@@ -1,6 +1,5 @@
 DO $$
-
-DECLARE
+  DECLARE
       -- Any variable declarations would go here
   BEGIN
       -- Begin transaction
