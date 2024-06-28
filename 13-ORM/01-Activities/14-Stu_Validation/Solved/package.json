@@ -1,0 +1,23 @@
+{
+  "name": "user-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "watch":"nodemon server.js",
+    "start": "node server.js",
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "pg": "^8.11.3",
+    "sequelize": "^6.33.0"
+  },
+  "devDependencies": {
+    "jest": "^26.4.2",
+    "nodemon": "^3.1.4"
+  }
+}

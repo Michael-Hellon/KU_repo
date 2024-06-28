@@ -4,6 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
+    "watch":"nodemon server.js",
     "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -14,5 +15,8 @@
     "express": "^4.17.1",
     "pg": "^8.11.3",
     "sequelize": "^6.33.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
   }
 }

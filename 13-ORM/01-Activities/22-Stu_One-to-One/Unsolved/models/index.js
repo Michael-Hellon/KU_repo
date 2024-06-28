@@ -3,7 +3,7 @@ const LibraryCard = require('./LibraryCard');
 
 Reader.hasOne(LibraryCard, {
   foreignKey: 'reader_id',
-  // TODO: Add a comment describing the functionality of this property
+  // If we delete the reader we also delete the library card.
   onDelete: 'CASCADE',
 });
 
@@ -11,5 +11,5 @@ LibraryCard.belongsTo(Reader, {
   foreignKey: 'reader_id',
 });
 
-// TODO: Add a comment describing the functionality of this statement
+// Exporting our reader and library card classes.
 module.exports = { Reader, LibraryCard };

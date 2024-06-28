@@ -1,25 +1,25 @@
 const router = require('express').Router();
 const Book = require('../../models/Book');
 
-// setting up end point for getting all the books from the root
+// setting up an endpoint for getting all of the books
 router.get('/', (req, res) => {
-  // selecting all of the data about books and bring it back to the front end
+  // selecting all of the data about books and sending it back to the frontend.
   Book.findAll().then((bookData) => {
-    res.json(bookData); // jjson response
+    res.json(bookData);
   });
 });
 
-// allows us to get data about paperbooks
+// allows to get data about paperbacks.
 router.get('/paperbacks', (req, res) => {
   Book.findAll({
-    // sorting the books by title
+    // sorting the books by title.
     order: ['title'],
-    // filter for all books that are paperbacks
+    // filter for all books that paperback.
     where: {
       is_paperback: true
     },
     attributes: {
-      // leaves out these two columns in the data we return
+      // dont include these columns in the data we return.
       exclude: ['is_paperback', 'edition']
     }
   }).then((bookData) => {
@@ -27,9 +27,9 @@ router.get('/paperbacks', (req, res) => {
   });
 });
 
-// getting a specific book by id
+// getting a specific book by id.
 router.get('/:id', (req, res) => {
-  // find individual book by the primary key, then return it
+  // find the invidiual book by the primary key, then return it as json to the frontend.
   Book.findByPk(req.params.id).then((bookData) => {
     res.json(bookData);
   });

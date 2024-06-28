@@ -4,6 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
+    "watch": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
@@ -11,9 +12,13 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^5.1.1",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "pg": "^8.11.3",
     "sequelize": "^6.33.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.3"
   }
 }

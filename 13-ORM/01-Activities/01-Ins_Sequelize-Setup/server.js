@@ -13,3 +13,5 @@ app.use(express.urlencoded({ extended: true }));
 sequelize.sync().then(() => {
   app.listen(PORT, () => console.log('Now listening'));
 });
+
+// input password into the connection.js file to run

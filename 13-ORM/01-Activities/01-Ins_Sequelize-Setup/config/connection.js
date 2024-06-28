@@ -2,15 +2,15 @@ const Sequelize = require('sequelize');
 
 // Create a connection object
 const sequelize = new Sequelize(
-  // Database name
-  'library_db',
+  // Database name - same as in schema
+  'library_db', 
   // User
   'postgres',
-  // Password
-  'oit',
+  // Password - must enter password to run
+  '',
   {
     // Database location
-    host: 'localhost', // macs '127.0.0.1'
+    host: 'localhost',
     dialect: 'postgres'
   }
 );

@@ -34,6 +34,7 @@ User.init(
     underscored: true,
     modelName: 'user',
   }
+  fmgfgm,
 );
 
 module.exports = User;
